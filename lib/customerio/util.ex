@@ -1,7 +1,7 @@
 defmodule Customerio.Util do
   @moduledoc false
 
-  @base_route "https://track.customer.io/api/v1/"
+  @base_route "http://track.customer.io/api/v1/"
 
   defp get_username, do: Application.get_env(:customerio, :site_id)
   defp get_password, do: Application.get_env(:customerio, :api_key)
