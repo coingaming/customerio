@@ -34,14 +34,6 @@ defmodule Customerio.Util do
           opts :: []
         ) :: any
   def send_request(method, route, data_map, opts \\ []) do
-    IO.inspect(%{
-      method: method,
-      route: @base_route <> route,
-      headers: put_headers(),
-      data: data_map |> Jason.encode!(),
-      auth: with_auth(opts)
-    })
-
     case :hackney.request(
            method,
            @base_route <> route,
