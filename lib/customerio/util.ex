@@ -9,8 +9,8 @@ defmodule Customerio.Util do
   defp with_auth(opts) do
     opts
     |> Keyword.put(
-      :hackney,
-      basic_auth: {
+      :basic_auth,
+      {
         get_username(),
         get_password()
       }
